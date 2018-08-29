@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SVG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h2>SVG Path</h2>
+    
+    <h3>1. Draw a rectangle with path (M - moveto, L - lineto, Z - closepath) </h3>
+    <svg height="200" width="200">
+        <!-- <Letter>X Y -->
+        <!-- (10, 10), (110, 10), (110, 210), (10, 210) -->
+        <path d="M10 10 L110 10 L110 210 L10 210 Z" />
+    </svg>
+
+    <h3>2. Draw a rectangle with path but with Horizontal and Vertical (H - horizontal lineto, V - vertical lineto) </h3>
+    <svg height="200" width="200">
+        <path d="M10 10 H110 V200 H10 Z" />
+    </svg>
+
+    <h3>3. Draw a complex diagram (Q = quadratic Bézier curve ) </h3>
+        <svg height="400" width="450">
+            <!-- stroke, stroke-width, fill -->
+            <path id="lineAB" d="M 100 350 l 150 -300" stroke="red"
+            stroke-width="3" fill="none" />
+
+            <path id="lineBC" d="M 250 50 l 150 300" stroke="red"
+            stroke-width="3" fill="none" />
+            
+            <path d="M 175 200 l 150 0" stroke="green" stroke-width="3"
+            fill="none" />
+            <!-- Q = quadratic Bézier curve -->
+            <!-- q <X of central point> <Y of central point> -->
+            <path d="M 100 350 q 150 -300 300 0" stroke="blue"
+            stroke-width="5" fill="none" />
+
+            <!-- g tag is used to group other elements -->
+            <g stroke="black" stroke-width="3" fill="black">
+                <circle id="pointA" cx="100" cy="350" r="3" />
+                <circle id="pointB" cx="250" cy="50" r="3" />
+                <circle id="pointC" cx="400" cy="350" r="3" />
+            </g>
+            
+        </svg>
+
+    
+
+</body>
+</html>
